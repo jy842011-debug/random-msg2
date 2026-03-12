@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>랜덤 문구</title>
+
+<style>
+
+body {
+
+  background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+
+  background-size: 400% 400%;
+
+  animation: gradient 15s ease infinite;
+
+  font-family: 'Arial Black', sans-serif;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  margin: 0;
+
+  height: 100vh;
+
+}
+
+h1 {
+
+  font-size: 3em;
+
+  color: #fff;
+
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+
+  animation: fadeIn 1.5s ease-out, glow 2s ease-in-out infinite alternate;
+
+  margin: 0;
+
+}
+
+@keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.8) translateY(30px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+@keyframes glow { from { text-shadow: 3px 3px 6px rgba(0,0,0,0.5); } to { text-shadow: 0 0 20px #fff, 3px 3px 6px rgba(0,0,0,0.5); } }
+
+</style>
+
+</head>
+
+<body>
+
+<h1 id="msg">터치하세요!</h1>
+
+<script>
+
+const msgs = ["오늘도 화이팅 💕", "웃으며 하루 보내요 😊", "너는 최고야! ✨", "좋은 일 가득! 🌟"];
+
+const msgEl = document.getElementById("msg");
+
+msgEl.innerText = msgs[Math.floor(Math.random() * msgs.length)];
+
+</script>
+
+</body>
+
+</html>
